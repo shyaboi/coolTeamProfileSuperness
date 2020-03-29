@@ -7,10 +7,13 @@ const util = require('util')
 const render = require("./lib/htmlRenderer");
 const appendFile = util.promisify(fs.appendFile)
 const employees = []
-
+count = 0
+function counter(){
+    count++
+}
 main()
 async function main(){
-    
+  
 const qs = await inquirer.prompt([
     {
         name: "role",
@@ -99,5 +102,11 @@ switch (qs.role) {
         main()
         })
                 break;
+
+    default:
+        counter()
+        console.log(count);
+        appendFile(`bork${count}.html`, render(employees))
+        break;
     }
 }
