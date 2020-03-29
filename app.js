@@ -19,5 +19,27 @@ const qs = await inquirer.prompt([
         choices: ["Engineer", "Intern", "Manager", "I'm all finished."],
     }])
 
+switch (qs.role) {
+    case "Engineer":
+       await 
+       inquirer.prompt([
+            {
+                name: "name",
+                message: "What is name?"
+            },
+            {
+                name: "email",
+                message: "What is email?"
+            },
+            {
+                name: "id",
+                message: "What is id?"
+            },
+            {
+                name: "github",
+                message: "What is github username?"
+            },
 
+        ])
+    }
 }
